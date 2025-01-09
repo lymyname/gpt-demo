@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import image3 from "../../public/image copy 4.png";
 import image4 from "../../public/image copy 5.png";
 import Scrollbar from "react-scrollbars-custom";
 import { Button } from "antd";
-import { SyncOutlined } from "@ant-design/icons";
+
 import TextArea from "antd/es/input/TextArea";
 import MarkdownRenderer from "./component/Markdown";
 export default function Page() {
@@ -38,10 +39,10 @@ export default function Page() {
     const reader = res.body.getReader();
     const decoder = new TextDecoder("utf-8");
     let buffer = "";
-          let cachePoll =''
-      let pre= ''
+          // let cachePoll =''
+  
     while (true) {
-      let tempMsgs: string[] = [];
+      // let tempMsgs: string[] = [];
       const { done, value } = await reader.read();
       if (done) break;
 
